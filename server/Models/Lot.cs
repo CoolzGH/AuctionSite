@@ -10,6 +10,6 @@ public class Lot
     public DateTime DatePlacement { get; set; }
     public int OwnerID { get; set; }
     public Owner Owner { get; set; }
-    public int CotegoryID { get; set; }
-    public Category Cotegory { get; set; }
+    public int CategoryID { get; set; }
+    public Category Category { get; set; }
 }
