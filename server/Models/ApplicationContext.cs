@@ -7,7 +7,7 @@ namespace Server.Models
     {
         public DbSet<Lot> Lots { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Category> Owners { get; set; }
+        public DbSet<Owner> Owners { get; set; }
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
             : base(options)
         {
