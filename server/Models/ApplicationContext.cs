@@ -7,7 +7,7 @@ namespace Server.Models
     {
         public DbSet<Lot> Lots { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Category> Owners { get; set; }
+        public DbSet<Owner> Owners { get; set; }
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
             : base(options)
         {
@@ -32,10 +32,10 @@ namespace Server.Models
 
             modelBuilder.Entity<Lot>().HasData(
                 new Lot {ID = 1, StartPrice = 200, BlitzPrice = 5000,  Name = "Name1", 
-                Description = "Description1", DatePlacement = new DateTime(2011, 6, 10), OwnerID = 1, CotegoryID = 1},
+                Description = "Description1", DatePlacement = new DateTime(2011, 6, 10), OwnerID = 1, CategoryID = 1},
 
                 new Lot {ID = 2, StartPrice = 412, BlitzPrice = 1224,  Name = "Name2", 
-                Description = "Description2", DatePlacement = new DateTime(2012, 12, 2), OwnerID = 2, CotegoryID = 2}
+                Description = "Description2", DatePlacement = new DateTime(2012, 12, 2), OwnerID = 2, CategoryID = 2}
             );
             
         }
