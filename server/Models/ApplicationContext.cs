@@ -1,6 +1,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
- 
+
 namespace Server.Models
 {
     public class ApplicationContext : DbContext
@@ -37,7 +37,7 @@ namespace Server.Models
                 new Lot {ID = 2, StartPrice = 412, BlitzPrice = 1224,  Name = "Name2", 
                 Description = "Description2", DatePlacement = new DateTime(2012, 12, 2), OwnerID = 2, CategoryID = 2}
             );
-            
+
         }
     }
 }
