@@ -1,15 +1,17 @@
 import React from 'react';
 import './App.css';
-import Head from './components/Head';
-import Ads from './components/Ads';
-import Avatar from './components/Avatar';
+import Head from './MyComponents/Head';
+import Ads from './MyComponents/Ads';
+import Avatar from './MyComponents/Avatar';
+import MyCards from './components/MyCards';
 
 function App() {
   return (
     <div className="App">
-      <Head></Head>
-      <Ads></Ads>
-      <Avatar></Avatar>
+      <Head/>
+      <Ads/>
+      <Avatar/>
+      <MyCards/>
     </div>
   );
 }
