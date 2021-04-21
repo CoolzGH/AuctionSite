@@ -8,6 +8,8 @@ import {
   } from "@material-ui/core";
   import DeleteIcon from '@material-ui/icons/Delete';
   import React, { Component } from "react";
+  import { ChangeForm } from './ChangeForm';
+  
   
   export interface Lot {
     title: string;
@@ -36,7 +38,11 @@ import {
         console.log(`dont delete item ${JSON.stringify(this.myLot)}`)
       }
     }
-  
+
+    changeHandler = () => {
+      
+    }
+
     render() {
       return (
         <Card>
