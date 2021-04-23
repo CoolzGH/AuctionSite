@@ -13,7 +13,7 @@ import {
   
   export interface Lot {
     title: string;
-    description?: string;
+    description: string;
   }
   
   interface IProps {
@@ -39,9 +39,12 @@ import {
       }
     }
 
-    changeHandler = () => {
+    openform = () => {
+      console.log('Open form');
+      return <ChangeForm title={this.myLot.title} description={this.myLot.description}/>;
       
     }
+
 
     render() {
       return (
@@ -58,6 +61,7 @@ import {
             <Button
               variant="contained"
               color="primary"
+              onClick={this.openform}
             >
               Change
             </Button>

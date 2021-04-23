@@ -12,9 +12,11 @@ interface IState {
 
 export class ChangeForm extends React.Component <Lot, IState> {
     constructor(props: Lot) {
+      debugger;
       super(props);
-      this.state = {title: "", description: ""};
- 
+      this.state = {title: this.props.title, description: this.props.description};
+      
+
       this.onChange = this.onChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -33,11 +35,11 @@ export class ChangeForm extends React.Component <Lot, IState> {
           <form onSubmit={this.handleSubmit}>
               <p>
                   <label>Название:</label><br/>
-                  <input type="text" value={this.state.title} onChange={this.onChange}/>
+                  <textarea value={this.state.title} onChange={this.onChange}/>
               </p>
               <p>
                   <label>Описание:</label><br />
-                  <input type="text" value={this.state.description} onChange={this.onChange}/>
+                  <textarea value={this.state.description} onChange={this.onChange}/>
               </p>
               <input type="submit" value="Отправить"/>
           </form>
