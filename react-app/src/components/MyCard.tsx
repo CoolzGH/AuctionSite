@@ -9,6 +9,7 @@ import {
   import DeleteIcon from '@material-ui/icons/Delete';
   import React, { Component } from "react";
   import { ChangeForm } from './ChangeForm';
+  import ReactDOM from 'react-dom';
   
   
   export interface Lot {
@@ -41,8 +42,9 @@ import {
 
     openform = () => {
       console.log('Open form');
-      return <ChangeForm title={this.myLot.title} description={this.myLot.description}/>;
-      
+      ReactDOM.render(
+      <ChangeForm title={this.myLot.title} description={this.myLot.description}/>, 
+      document.getElementById('root'));
     }
 
 
