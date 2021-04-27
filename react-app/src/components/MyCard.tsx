@@ -8,10 +8,13 @@ import {
   } from "@material-ui/core";
   import DeleteIcon from '@material-ui/icons/Delete';
   import React, { Component } from "react";
+  import { ChangeForm } from './ChangeForm';
+  import ReactDOM from 'react-dom';
+  
   
   export interface Lot {
     title: string;
-    description?: string;
+    description: string;
   }
   
   interface IProps {
@@ -36,7 +39,15 @@ import {
         console.log(`dont delete item ${JSON.stringify(this.myLot)}`)
       }
     }
-  
+
+    openform = () => {
+      console.log('Open form');
+      ReactDOM.render(
+      <ChangeForm title={this.myLot.title} description={this.myLot.description}/>, 
+      document.getElementById('root'));
+    }
+
+
     render() {
       return (
         <Card>
@@ -52,6 +63,7 @@ import {
             <Button
               variant="contained"
               color="primary"
+              onClick={this.openform}
             >
               Change
             </Button>
