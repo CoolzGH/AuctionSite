@@ -34,7 +34,7 @@ export class ChangeForm extends React.Component <Lot, IState> {
   }
 
   handleSubmit(event: any) {
-    alert(`Название лота: + ${this.state.title}, Описание лота: ${this.state.description}`);
+    alert(`Название лота: ${this.state.title}, Описание лота: ${this.state.description}`);
     event.preventDefault();
   }
 
