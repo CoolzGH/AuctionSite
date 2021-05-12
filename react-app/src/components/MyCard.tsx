@@ -6,11 +6,9 @@ import {
   IconButton,
   Typography,
 } from "@material-ui/core";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import DeleteIcon from "@material-ui/icons/Delete";
 import React, { Component } from "react";
 import { ChangeForm } from "./ChangeForm";
-import ReactDOM from "react-dom";
 
 export interface Lot {
   title: string;
@@ -22,11 +20,18 @@ interface IProps {
   onDelete: (stuff: Lot) => void;
 }
 
-export default class MyCard extends Component<IProps> {
+interface IState {
+  isForm:boolean;
+}
+
+export default class MyCard extends Component<IProps, IState> {
   myLot: Lot;
   constructor(props: IProps) {
     super(props);
     this.myLot = props.lot;
+    this.state = {
+      isForm:false,
+    }
   }
 
   deleteHandler = () => {
@@ -41,32 +46,31 @@ export default class MyCard extends Component<IProps> {
 
   openform = () => {
     console.log("Open form");
-    ReactDOM.render(
-      <ChangeForm
-        title={this.myLot.title}
-        description={this.myLot.description}
-      />,
-      document.getElementById("root")
-    );
+    this.setState(
+      {isForm:true}
+    )
+    // ReactDOM.render(
+    //   <ChangeForm
+    //     title={this.myLot.title}
+    //     description={this.myLot.description}
+    //   />,
+    //   document.getElementById("root")
+    // );
   };
 
   render() {
     return (
-      <Router>
-        <Link to="/Lots"></Link>
         <Card>
-          <Route
-            path="/ChangeForm"
-            render={(props) => (
+          {this.state.isForm ?
               <ChangeForm
                 title={this.myLot.title}
                 description={this.myLot.description}
               />
-            )}
-          />
+              :
+            <>
           <CardContent>
             <Typography variant="h5" component="h2">
-            <Link to="/ChangeForm">{this.myLot.title}</Link>
+              {this.myLot.title}
             </Typography>
             <Typography variant="body2" component="p">
               {this.myLot.description}
@@ -80,8 +84,9 @@ export default class MyCard extends Component<IProps> {
               <DeleteIcon fontSize="large" />
             </IconButton>
           </CardActions>
+          </>
+  }
         </Card>
-      </Router>
     );
   }
 }
