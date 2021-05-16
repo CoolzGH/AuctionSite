@@ -49,13 +49,6 @@ export default class MyCard extends Component<IProps, IState> {
     this.setState(
       {isForm:true}
     )
-    // ReactDOM.render(
-    //   <ChangeForm
-    //     title={this.myLot.title}
-    //     description={this.myLot.description}
-    //   />,
-    //   document.getElementById("root")
-    // );
   };
 
   render() {

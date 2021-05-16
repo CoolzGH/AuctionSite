@@ -16,7 +16,7 @@ export class ChangeForm extends React.Component <Lot, IState> {
       super(props);
       this.state = {
         title: this.props.title,
-        description: this.props.description
+        description: this.props.description,
       };
       
       this.handleInputChange = this.handleInputChange.bind(this);
@@ -29,7 +29,7 @@ export class ChangeForm extends React.Component <Lot, IState> {
     const name = target.name;
 
     this.setState({
-      [name]: value
+      [name]: value,
     });
   }
 
