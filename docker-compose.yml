@@ -10,15 +10,16 @@ services:
     volumes:
       - tprogData:/var/opt/mssql
 
-  # server:
-  #   build:
-  #     context: ./
-  #     dockerfile: Dockerfile
-  #   image: isuct/sample-dot-net
-  #   ports:
-  #     - 8001:80
-  #   depends_on: 
-  #     - mssql
+  server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 8001:80
+    depends_on:
+      - mssql
+    volumes:
+      - ./server/appsettings.Development.json:/app/appsettings.json
 
 volumes:
   tprogData:
