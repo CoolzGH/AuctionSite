@@ -1,14 +1,11 @@
 import React from 'react';
 import './App.css';
-import Head from './MyComponents/Head';
-
-import MyCards from './components/MyCards';
+import Profile from "./MyComponents/Profile"
 
 function App() {
   return (
     <div className="App">
-      <Head/>
-      <MyCards/>
+      <Profile/>
     </div>
   );
 }

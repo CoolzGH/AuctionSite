@@ -14,7 +14,19 @@ const allLotNet: Lot[] = [
   {
     title: "Lot №3",
     description: "Not simple lot",
-  }
+  },
+  {
+    title: "Lot №4",
+    description: "lot",
+  },
+  {
+    title: "Lot №5",
+    description: "lot",
+  },
+  {
+    title: "Lot №6",
+    description: "lot",
+  },
 ];
 
 interface IState {
@@ -48,7 +60,7 @@ export default class MyCards extends Component<any, IState> {
         {this.state.allLot.length > 0 ? (
           <Grid container spacing={2}>
             <Grid item xs={12}>
-              <Grid container justify="center" spacing={1}>
+              <Grid container justify="flex-start" spacing={1}>
                 {this.state.allLot.map((item: Lot) => {
                   return (
                     <MyCard
