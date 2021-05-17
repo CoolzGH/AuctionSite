@@ -1,8 +1,9 @@
 import React from 'react';
 
-type Lot = {
+type Props = {
     title: string;
     description: string;
+    onClose: any;
 };
 
 interface IState { 
@@ -11,12 +12,13 @@ interface IState {
     [key: string]: any;
 };
 
-export class ChangeForm extends React.Component <Lot, IState> {
-    constructor(props: Lot) {
+export class ChangeForm extends React.Component <Props, IState> {
+    constructor(props: Props) {
       super(props);
       this.state = {
         title: this.props.title,
         description: this.props.description,
+        onClose: this.props.onClose,
       };
       
       this.handleInputChange = this.handleInputChange.bind(this);
@@ -35,6 +37,7 @@ export class ChangeForm extends React.Component <Lot, IState> {
 
   handleSubmit(event: any) {
     alert(`Название лота: ${this.state.title}, Описание лота: ${this.state.description}`);
+    this.props.onClose();
     event.preventDefault();
   }
 

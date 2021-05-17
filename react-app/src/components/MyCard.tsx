@@ -51,6 +51,13 @@ export default class MyCard extends Component<IProps, IState> {
     )
   };
 
+  closeForm = () => {
+    console.log("Close form");
+    this.setState(
+      {isForm:false}
+    )
+  };
+
   render() {
     return (
         <Card>
@@ -58,6 +65,7 @@ export default class MyCard extends Component<IProps, IState> {
               <ChangeForm
                 title={this.myLot.title}
                 description={this.myLot.description}
+                onClose={this.closeForm}
               />
               :
             <>
