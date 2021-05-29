@@ -42,6 +42,7 @@ export default class MyCards extends Component<any, IState> {
   }
 
   componentDidMount() {
+    this.gettingLot();
     setTimeout(() => {
       this.setState({ allLot: allLotNet });
     }, 1200);
@@ -53,6 +54,12 @@ export default class MyCards extends Component<any, IState> {
     );
     this.setState({ allLot: filtered });
   };
+
+  async gettingLot() {
+    fetch('/api/demo')
+    .then(response => response.json())
+    .then(data => console.log(JSON)); // json => console.log(json)
+  }
 
   render() {
     return (
